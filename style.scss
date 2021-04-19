@@ -1,0 +1,235 @@
+body{
+    background-image: url("images/background4.jpg");
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section{
+    height: 72vh;
+    background-color: rgba(19, 19, 19, 0.631);
+    margin: 0;
+    padding: 0;
+}
+
+//TOWER PROGRESS  
+
+.tower-progress{
+    margin: 10px auto 10px;
+    width: 30%;
+    height: 65%;
+    border: rgba(255, 255, 255, 0.857) solid 1px;
+    border-top-left-radius: 1.4em;
+    border-top-right-radius: 1.4em;
+    box-sizing: border-box;
+    background-color: rgba(221, 91, 253, 0.309);
+    position: relative;
+} 
+.tower-progress1::before{
+    content: '';
+    position: absolute;
+    left: .1em;
+    bottom: .1em;
+    right: .1em;
+    width: calc(100% - 0.2em);
+    // height: 10%;
+    height: calc(var(--height, 0) * 1%);
+    min-height: 0.5rem;
+    max-height: calc(100% - 0.2em);
+    background-color: rgba(100, 239, 255, 0.7);
+    border-top-left-radius: 1.1em;
+    border-top-right-radius: 1.1em;
+}
+.tower-progress2::before{
+    content: '';
+    position: absolute;
+    left: .1em;
+    bottom: .1em;
+    right: .1em;
+    width: calc(100% - 0.2em);
+    // height: 10%;
+    height: calc(var(--height2, 0) * 1%);
+    min-height: 0.5rem;
+    max-height: calc(100% - 0.2em);
+    background-color: rgba(100, 239, 255, 0.7);
+    border-top-left-radius: 1.1em;
+    border-top-right-radius: 1.1em;
+}
+
+header{
+    background-color: rgba(0, 0, 0, 0.857);
+    height: 28vh;
+    color: white;
+    img{
+        width: 100%;
+        height: auto;
+    }
+    p{
+        letter-spacing: 0.25rem;
+        font-size: 0.8vw;
+        border-left: rgba(103, 213, 247, 0.871) solid 2px;
+        border-right: rgba(103, 213, 247, 0.871) solid 2px; 
+    }
+}
+
+// CSS CARDGAME DECO
+
+#cardDeck {
+    height: 72vh;
+    // border: blue 1px solid;
+    padding: 20px;
+   
+    background: linear-gradient(rgba(0, 0, 0, 0.857), rgba(38, 38, 38, 0.857), rgba(187, 187, 187, 0.802)); 
+}
+#cardBox{
+    // border: cadetblue solid 1px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    padding-top: 30px;
+}
+
+#imgVerso{
+    width: 190px;
+    height: 285px;
+    // padding: 40px;
+    position: relative;
+    z-index: 0;
+    border: rgb(255, 255, 255) 1px solid ;
+    border-radius: 5px;
+    background-image: url('images/cartes/Verso.jpg');
+}
+
+#imgVerso::after{
+    content: "";
+    background-image: url('images/cartes/Verso.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    border: rgb(255, 255, 255) 1px solid ;
+    border-radius: 5px;
+    transform-origin: 0% 100%;
+    transform: rotate(2deg);
+}
+
+#imgVerso::before{
+    content: "";
+    background-image: url('images/cartes/Verso.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    border: rgb(255, 255, 255) 1px solid ;
+    border-radius: 5px;
+    transform-origin: 0% 100%;
+    transform: rotate(4deg);
+}
+
+// CSS FLIPCARD
+.card{
+    width: 220px;
+    height: 330px;
+    // border: red 4px solid;
+    background-color: rgba(255, 255, 255, 0);
+    // border: rgb(227, 66, 248);
+    perspective: 1000px;
+}
+
+.Verso{
+    border: white (227, 66, 248) solid 1px;
+    border-radius: 5px;
+    width: 220px;
+    height: 330px;
+    box-sizing: border-box;
+}
+
+.card__inner{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    // cursor: pointer;
+    position: relative;
+}
+
+.card__inner.is-flipped{
+    transform: rotateY(180deg);
+}
+
+.card__face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 5px;
+    // border: white solid 1px;
+}
+
+.card__face--back{
+    transform: rotateY(180deg);
+}
+
+#card__content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+#yourTurn{
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.1em;
+}
+#rules{
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgb(158, 236, 255);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+#winnerIs{
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: rgb(98, 213, 255);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+
+.JsButton{
+    color: black;
+    padding: 10px;
+    border-radius: 0.5em;
+    letter-spacing: 0.1em;
+   
+}
+
+.scoreStyle{
+    color: white;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    span{
+        font-size: 1.8em;
+        color: rgb(255, 98, 210);
+    }
+}
+
+.btn{
+    letter-spacing: 0.1em;
+}
+
+// .yourTurnStyle{
+//     color: rgb(148, 36, 36);
+//     letter-spacing: 0.1em;
+//     font-size: 5px;
+// }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Jeu La tour d'Argent" content="Le jeu de l'ascension sociale" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>La tour d'Argent</title>
+</head>
+
+<body>
+
+    <header class="container">
+        <div class="row d-flex justify-content-center mb-3 pt-1">
+
+            <img class="img-fluid col-4 " src="images/logo_tour_argent.png" alt="">
+
+        </div>
+        <div class="row de-flex justify-content-center">
+            <p class="col-10 text-center">Soyez le premier à cumuler 30 points pour arriver en haut de la tour. C'est un
+                jeu de hasard. Votre destin est dans les cartes. Chacun votre tour vous tirerez une carte et vous
+                acceptez votre sort. Vous ne pouvez jamais avoir un score négatif. Puisses le destin vous être
+                favorable. A vous de jouer !</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- SECTION LEFT -->
+            <section id="player1Area" class="col">
+                <!-- <ion-icon name="diamond"></ion-icon> -->
+                <div class=" tower-progress tower-progress1 mt-5"></div>
+                <div class="row d-flex justify-content-center mt-4">
+                    <button id="p1" class="btn btn-light" onclick="eachGame()"></button>
+                </div>
+                <div class="row scoreStyle d-flex justify-content-center">
+                    <div>Score : <span id="scoreP1"></span></div>
+                </div>
+            </section>
+
+            <!-- SECTION MIDDLE -->
+            <section id="cardGameArea" class="col-7 p-0">
+
+                <div id="cardDeck">
+                    <!--Paquet de carte CSS-->
+                    <div id="cardBox">
+                        <div id="imgVerso"></div>
+
+                        <!--FLIPCARD-->
+                        <div class="card">
+                            <div class="card__inner">
+                                <div class="card__face card__face--front">
+                                    <img class="Verso" src="images/cartes/Verso.jpg" alt="">
+                                </div>
+
+                                <div class="card__face card__face--back">
+                                    <img id="card__content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row d-flex flex-column align-items-center mt-3">
+                        <div class="d-flex flex-column" id="namePlayerGroup">
+                            <input id="namePlayer1" class = "mb-2" type="text" placeholder = "joueur 1" value = "">
+                            <input id= "namePlayer2" class="mb-2" type="text" placeholder = "joueur 2" value = "">
+                            <button id="buttonNamePlayer" class= "mb-2 btn btn-dark" type="submit" onclick="setGame()">Commencer la partie</button>
+                        </div>
+                        <!--NOS REF JS INNERTEXT-->
+                    <p id="rules"></p>
+                    <p id="yourTurn"></p>
+                    <p id="winnerIs"></p>
+                    <div id="buttonAcceptField"></div>
+                    <div id="newGameField"></div>
+                </div>
+
+                </div>
+                <!-- <img width="200" height="300" id="displayImage" src=""></img> -->
+            </section>
+
+            <!-- SECTION RIGHT -->
+            <section id="player2Area" class="col">
+                <!-- <span style='font-size:30px;'>&#128176;</span> -->
+                <div class="tower-progress tower-progress2 mt-5"></div>
+                <div class="row d-flex justify-content-center mt-4">
+                    <button id="p2" class="btn btn-light" onclick="eachGame()"></button>
+                </div>
+                <div class="row scoreStyle d-flex justify-content-center">
+                    <div>Score : <span id="scoreP2"></span></div>
+                </div>
+            </section>
+
+
+        </div>
+        <!--FIN DE LA ROW PRINCIPALE-->
+
+    </div>
+    <!--FIN DU CONTAINER PRINCIPAL-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
